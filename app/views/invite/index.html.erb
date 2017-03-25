@@ -41,7 +41,7 @@
       <% end %>
 
       <br />
-      <%= submit_tag ENV["SUBMIT_BUTTON_TITLE"], class: 'btn btn-lg btn-primary btn-block', id: "submit" %>
+      <%= submit_tag ENV["SUBMIT_BUTTON_TITLE"], class: 'btn btn-lg btn-primary btn-block', id: "beta_button" %>
     <% end %>
   <% else %>
     <p class="alert alert-<%= @type %>">
@@ -58,8 +58,5 @@
             border-radius: 22.544%;
 
     width: 256px;
-  }
-  #submit {
-    margin-bottom: 20px;
   }
 </style>
