@@ -41,7 +41,7 @@
       <% end %>
 
       <br />
-      <%= submit_tag t("Beta Button"), class: 'btn btn-lg btn-primary btn-block', id: "submit" %>
+      <%= submit_tag t(ENV["SUBMIT_BUTTON_TITLE"]), class: 'btn btn-lg btn-primary btn-block', id: "submit" %>
     <% end %>
   <% else %>
     <p class="alert alert-<%= @type %>">
