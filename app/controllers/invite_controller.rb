@@ -28,6 +28,10 @@ class InviteController < ApplicationController
       render :index
       return
     end
+    
+    email = params[:email]
+    first_name = params[:first_name]
+    last_name = params[:last_name]
 
     if ENV["RESTRICTED_DOMAIN"]
       domains = ENV["RESTRICTED_DOMAIN"].split(",")
@@ -52,10 +56,6 @@ class InviteController < ApplicationController
       end
     end
     
-    email = params[:email]
-    first_name = params[:first_name]
-    last_name = params[:last_name]
-
     if email.length == 0
       render :index
       return
@@ -76,7 +76,7 @@ class InviteController < ApplicationController
       Rails.logger.fatal ex.inspect
       Rails.logger.fatal ex.backtrace.join("\n")
 
-      @message = t(:message_error)
+      @message = [t(:message_error), ex.to_s].join(": ")
       @type = "danger"
     end
 
